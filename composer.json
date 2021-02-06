@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "PAVApp\\Core\\": "src/"
+            "PAVApp\\Core\\": "src/PAVApp/Core"
         }
     }
 }
