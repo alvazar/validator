@@ -1,0 +1,22 @@
+{
+    "name": "PAVApp/Validator",
+    "description": "Simple PHP validator",
+    "authors": [
+        {
+            "name": "PAVApp",
+            "email": "alvazar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "PAVApp\\Core\\": "src/"
+        }
+    }
+}
