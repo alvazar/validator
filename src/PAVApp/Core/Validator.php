@@ -76,7 +76,7 @@ class Validator
      * 
      * @return array
      */
-    public function check(array $checkRules, array &$data): Validator
+    public function check(array $checkRules, array &$data): self
     {
         $this->clear();
         foreach ($checkRules as $fieldName => $check) {
@@ -104,7 +104,7 @@ class Validator
      * 
      * @return void
      */
-    private function checkValue(string $name, $check, array &$data): Validator
+    private function checkValue(string $name, $check, array &$data): self
     {
         // Обязательное поле
         $isRequired = false;
@@ -152,7 +152,7 @@ class Validator
                     foreach ($value as $k => $val) {
                         // Проверка на регулярное выражение
                         if ($isRegexp) {
-                            $checkResult = preg_match($check, $value) === 1;
+                            $checkResult = preg_match($check, $val) === 1;
                         
                         // Экранирование строки
                         } elseif ($check === 'real_escape_string') {
@@ -221,7 +221,7 @@ class Validator
     /**Сбрасывает состояние объекта.
      * @return Validator
      */
-    public function clear(): Validator
+    public function clear(): self
     {
         $this->errors = [];
         return $this;
