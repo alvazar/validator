@@ -116,10 +116,13 @@ class Validator
         */
 
         //
-        if (!isset($data[$name])) {
+        if (!array_key_exists($name, $data)) {
             if ($isRequired) {
                 $this->errors[] = $name;
             }
+            return $this;
+        // если значение равно NULL, то не делаем проверок
+        } elseif (is_null($data[$name])) {
             return $this;
         }
         $value = $data[$name];
