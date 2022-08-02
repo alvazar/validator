@@ -192,7 +192,7 @@ class Validator
             }
 
             // если результат проверки не булев тип, то модифицируем значение
-            if (!is_bool($checkResult)) {
+            if (!is_bool($checkResult) && !$isMultiple) {
                 $data[$name] = $checkResult;
             }
         }
