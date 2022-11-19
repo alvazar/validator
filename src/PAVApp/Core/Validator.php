@@ -109,7 +109,7 @@ class Validator
         $fnCheckValue = function ($value) use(
             $isRegexp,
             $check
-        ): bool {
+        ): mixed {
             // Проверка на регулярное выражение
             if ($isRegexp) {
                 $checkResult = preg_match($check, $value) === 1;
